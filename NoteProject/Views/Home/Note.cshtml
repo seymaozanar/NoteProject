@@ -1,0 +1,70 @@
+﻿@model List<NoteProject.Models.TblNote>
+@{
+    ViewBag.Title = "Note";
+
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div class="container">
+        <h1>My Notes</h1>
+
+
+        @if (Model == null)
+        {
+            <h4>You have no saved note.</h4>
+            <p class=" w3l-register-p">If you want to add note  <a href="/Home/Index" class="alert-link"> Click Here</a></p>
+
+        }
+
+        else if (Model != null)
+        {
+
+            if (Model.Count > 0)
+            {
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Time</th>
+                            <th>Delete</th>
+                          
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td> @Html.DisplayFor(m => item.Title)</td>
+                            <td> @Html.DisplayFor(m => item.Description)</td>
+                            <td>@Html.DisplayFor(m => item.CreationTime)</td>
+                            <td><a href="/Home/Delete/@item.ID" class="btn btn-danger">Delete</a></td>
+                           
+                        </tr>
+
+                        }
+                    </tbody>
+                </table>
+
+                
+                <a href="/Home/Index" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add Note</a>
+              
+            }
+
+
+
+
+        }
+
+
+    </div>
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

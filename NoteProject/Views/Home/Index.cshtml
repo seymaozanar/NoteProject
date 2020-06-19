@@ -1,0 +1,57 @@
+﻿@model NoteProject.Models.TblNote
+@{
+    /**/
+
+    ViewBag.Title = "User Notes";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h1></h1>
+<div class=" w3l-login-form">
+    <h2>Add Your Notes</h2>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <div class="w3l-form-group">
+            <label for="exampleFormControlTextarea1">Title</label>
+
+            <textarea class="form-control" id="Title" name="Title" rows="1" required="required"></textarea>
+        </div>
+
+        <div class="w3l-form-group">
+            <label>Description</label>
+
+            <textarea class="form-control" id="Description" name="Description" rows="5" required="required"></textarea>
+        </div>
+        <button type="submit">Save</button>
+
+        <br><br />
+
+
+        <center>
+            <a href="/Home/Note" type="button" class="btn btn-secondary  btn-light btn-lg active" role="button" aria-pressed="true">Go To My Notes</a>
+        </center>
+
+        <br><br />
+
+        if (ViewBag.Message != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    alert("@ViewBag.Message");
+                };
+
+
+            </script>
+        }
+        
+    }
+
+</div>
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+    }

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h1></h1>
+<div class=" w3l-login-form">
+    <h2>Login Here</h2>
+    @using (Html.BeginForm("Verify", "Login", FormMethod.Post))
+    {
+        <div class="w3l-form-group">
+            <label>Username:</label>
+            <div class="group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="UserName" class="form-control" placeholder="Username" required="required" />
+            </div>
+        </div>
+        <div class=" w3l-form-group">
+            <label>Password:</label>
+            <div class="group">
+                <i class="fas fa-unlock"></i>
+                <input type="password" name="Password" class="form-control" placeholder="Password" required="required" />
+            </div>
+        </div>
+
+        <button type="submit">Login</button>
+
+        if (ViewBag.Message!=null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    alert("@ViewBag.Message");
+                };
+
+
+            </script>
+        }
+        
+
+        <p class=" w3l-register-p">Don't have an account?<a href="/Register/Register" class="register"> Register</a></p>
+    }
+</div>

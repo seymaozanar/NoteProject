@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\NoteProject",
+    "\\NoteProject\\App_Start",
+    "\\NoteProject\\Content",
+    "\\NoteProject\\Controllers",
+    "\\NoteProject\\fonts",
+    "\\NoteProject\\images",
+    "\\NoteProject\\Models",
+    "\\NoteProject\\Views",
+    "\\NoteProject\\Views\\Home"
+  ],
+  "SelectedNode": "\\NoteProject\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}
